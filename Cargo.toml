@@ -1,0 +1,10 @@
+[package]
+name = "topalias-rust"
+version = "0.1.0"
+edition = "2021"
+authors = ["Sergey Chudakov <csredrat@gmail.com>"]
+description = "Linux bash aliases generator (Rust port)"
+license = "GPL-3.0"
+
+[dependencies]
+clap = { version = "4", features = ["derive"] }
