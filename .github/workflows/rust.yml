@@ -28,3 +28,17 @@ jobs:
       run: cargo package # publishes a package as a tarball
     - name: "Publish to crates.io"
       run: cargo publish # publishes your crate as a library that can be added as a dependency
+    - name: Upload release artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: topalias-rust
+        path: target/${{ matrix.BUILD_TARGET }}/topalias-rust
+    - uses: actions/checkout@v4
+    - name: Download release artifact
+      uses: actions/download-artifact@v4
+      with:
+        name: topalias-rust
+        path: .topalias-rust
+    - name: Publish built binary to GitHub releases
+    - run: |
+         gh release create --generate-notes ./topalias-rust/topalias-rust#topalias-rust
