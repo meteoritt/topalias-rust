@@ -41,4 +41,4 @@ jobs:
         path: .topalias-rust
     - name: Publish built binary to GitHub releases
     - run: |
-         gh release create --generate-notes ./topalias-rust/topalias-rust#topalias-rust
+        gh release create --generate-notes ./topalias-rust/topalias-rust#topalias-rust
